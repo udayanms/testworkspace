@@ -6,5 +6,5 @@ provider "tfe" {
 
 resource "tfe_workspace" "test" {
   name         = "my-workspace-name"
-  organization = "TFE-LZ"
+  organization = "TFEDemo"
 }
