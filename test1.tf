@@ -1,6 +1,6 @@
 provider "tfe" {
-  hostname = "${var.tf_hostname}"
- token    = "${var.token}"
+  hostname = var.tf_hostname
+ token    = var.token
   version  = "~> 0.15.0"
 }
 
