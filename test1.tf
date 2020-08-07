@@ -1,6 +1,6 @@
 locals {
    repo_name = "my-workspace-name"
-   git_org = "udayanms"
+   git_org = "LZ-User"
 }
 
 provider "tfe" {
