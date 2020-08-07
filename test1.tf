@@ -1,6 +1,6 @@
 locals {
-
    repo_name = "my-workspace-name"
+   git_org = "LZ-Users"
 }
 
 provider "tfe" {
@@ -22,8 +22,8 @@ resource "github_repository" "git_repo" {
   name         = local.repo_name
   description  = "My awesome codebase"
   provider     = github.github1
-#  private = true
-
+# private = true
+# Valid templates would be Accuont Creation, Guard
 #  template {
 #    owner = "github"
 #    repository = "terraform-module-template"
@@ -34,4 +34,9 @@ resource "tfe_workspace" "test" {
   name         = "my-workspace-name"
   organization = "TFEDemo"
   provider     = tfe.tfe1
+  vcs_repo {
+     identifier     = "${local.git_org}/${local.repo_name}"
+     branch         = local.repo_name
+     oauth_token_id = var.vcs_oauth_token_id
+  }
 }
