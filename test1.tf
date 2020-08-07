@@ -36,7 +36,7 @@ resource "tfe_workspace" "test" {
   provider     = tfe.tfe1
   vcs_repo {
      identifier     = "${local.git_org}/${local.repo_name}"
-     branch         = local.repo_name
+#     branch         = local.repo_name
      oauth_token_id = var.vcs_oauth_token_id
   }
 }
