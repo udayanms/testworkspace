@@ -18,7 +18,7 @@ provider "github" {
 }
 
 # Add a user to the organization
-resource "github_repository" "example" {
+resource "github_repository" "git_repo" {
   name         = local.repo_name
   description  = "My awesome codebase"
   provider     = github.github1
