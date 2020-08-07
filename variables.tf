@@ -13,3 +13,8 @@ variable github_organization {
 variable github_token  {
   type = any
 }
+
+
+variable vcs_oauth_token_id  {
+  type = any
+}
