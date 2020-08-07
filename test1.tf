@@ -4,7 +4,7 @@ locals {
 }
 
 provider "tfe" {
-  alias = "tfe1"
+  alias    = "tfe1"
   hostname = var.tf_hostname
   token    = var.token
   version  = "~> 0.15.0"
@@ -14,7 +14,7 @@ provider "tfe" {
 
 # Configure the GitHub Provider
 provider "github" {
-  alias = "github1"
+  alias        = "github1"
   token        = var.github_token
   organization = var.github_organization
 }
@@ -35,5 +35,5 @@ resource "github_repository" "example" {
 resource "tfe_workspace" "test" {
   name         = "my-workspace-name"
   organization = "TFEDemo"
-  provider = tfe.tfe1
+  provider     = tfe.tfe1
 }
