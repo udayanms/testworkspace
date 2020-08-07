@@ -14,7 +14,7 @@ provider "tfe" {
 provider "github" {
   alias        = "github1"
   token        = var.github_token
-  organization = local.git_org 
+  organization = local.github_organization 
 }
 
 # Add a user to the organization
@@ -35,7 +35,7 @@ resource "tfe_workspace" "test" {
   organization = "TFEDemo"
   provider     = tfe.tfe1
   vcs_repo {
-     identifier     = "${local.git_org}/${local.repo_name}"
+     identifier     = "${var.github_organization}/${local.repo_name}"
 #     branch         = local.repo_name
      oauth_token_id = var.vcs_oauth_token_id
   }
