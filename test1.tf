@@ -10,8 +10,6 @@ provider "tfe" {
   version  = "~> 0.15.0"
 }
 
-
-
 # Configure the GitHub Provider
 provider "github" {
   alias        = "github1"
@@ -21,7 +19,7 @@ provider "github" {
 
 # Add a user to the organization
 resource "github_repository" "example" {
-  name         = "example"
+  name         = local.repo_name
   description  = "My awesome codebase"
   provider     = github.github1
 #  private = true
