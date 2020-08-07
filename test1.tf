@@ -14,7 +14,7 @@ provider "tfe" {
 provider "github" {
   alias        = "github1"
   token        = var.github_token
-  organization = local.github_organization 
+  organization = var.github_organization 
 }
 
 # Add a user to the organization
